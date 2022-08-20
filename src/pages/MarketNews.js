@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import NewsCard from '../components/NewsCard';
-import { Link } from "react-router-dom";
 
 const MarketNews = () => {
 
@@ -47,6 +46,7 @@ const MarketNews = () => {
         return(
           <div>
             {item.author}
+            <NewsCard title={item.title} author={item.author} image={item.image} url={item.url} topic={item.topic} />
           </div>
         )
       })}

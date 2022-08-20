@@ -15,7 +15,7 @@ const SearchTicker = () => {
   }
 
   // fetch data
-  const [timeSeries, setTimeSeries] = useState();
+  const [timeSeries, setTimeSeries] = useState([]);
   // const [] = useState();
   const [highestPrice, setHighestPrice] = useState();
   const [lowestPrice, setLowestPrice] = useState();
@@ -108,6 +108,10 @@ const SearchTicker = () => {
     getTicker('IBM', 'TIME_SERIES_MONTHLY');
     getOverview();
   }, [])
+
+  if (timeSeries === []) {
+    return <p>Loading ...</p>
+  }
 
   return (
     <div style={Root}>

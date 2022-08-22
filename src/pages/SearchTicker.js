@@ -140,6 +140,7 @@ const SearchTicker = () => {
 }
 
 const Root = {
+  width: '84vw',
   display: 'flex',
   marginTop: '4%',
   marginLeft: '3%'

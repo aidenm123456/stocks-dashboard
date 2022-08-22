@@ -13,8 +13,8 @@ const NewsCard = ( {title, author, image, url, topic, summary} ) => {
         
         <div style={rDiv}>
           <h4 style={hFour} >{title}</h4>
-          <p>{author}</p>
-          <p>{topic}</p>
+          <p style={pStyle1}>{'By: ' + author}</p>
+          <p style={pStyle2}>{topic}</p>
         </div>
         
         
@@ -32,7 +32,7 @@ const aStyle =  {
 
 const cardDiv = {
   backgroundColor: '#635FA3',
-  display: 'flex'
+  display: 'flex',
 };
 
 const lDiv = {
@@ -42,14 +42,34 @@ const lDiv = {
   alignItems: 'center'
 };
 
-const rDiv = {};
+const rDiv = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  paddingLeft: '2vw',
+};
 
 const hFour = {
+  color:'whitesmoke'
+};
+
+const pStyle1 = {
+  color: 'whitesmoke'
+};
+
+const pStyle2 = {
+  // width: '8vw',
+  fontSize: '12px',
+  fontWeight: 'bold',
+  backgroundColor: '#17123B',
+  color: 'whitesmoke',
+  padding: '7px 10px',
+  borderRadius:'40px'
 };
 
 const miniImage = {
   width: '15vw',
-  height: '15vh'
+  height: '18.75vh'
 };
 
 

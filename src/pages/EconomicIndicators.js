@@ -2,7 +2,7 @@ import React from 'react'
 
 const EconomicIndicators = () => {
   return (
-    <div>EconomicIndicators</div>
+    <div style={{width: '84vw'}} >EconomicIndicators</div>
   )
 }
 

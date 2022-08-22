@@ -58,11 +58,11 @@ const MarketNews = () => {
 }
 
 const flexDiv = {
-  width: '85vw',
+  width: '84vw',
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
-  marginLeft:'10vw'
+  alignItems: 'center'
 }
 
 const h1Style = {

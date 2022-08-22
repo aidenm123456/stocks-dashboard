@@ -15,7 +15,7 @@ const SearchTicker = () => {
   }
 
   // fetch data
-  const [timeSeries, setTimeSeries] = useState([]);
+  const [timeSeries, setTimeSeries] = useState(null);
   // const [] = useState();
   const [highestPrice, setHighestPrice] = useState();
   const [lowestPrice, setLowestPrice] = useState();
@@ -109,8 +109,8 @@ const SearchTicker = () => {
     getOverview();
   }, [])
 
-  if (timeSeries === []) {
-    return <p>Loading ...</p>
+  if (timeSeries === null) {
+    return <p style={{color:'whitesmoke'}} >Loading ...</p>
   }
 
   return (

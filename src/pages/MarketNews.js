@@ -3,7 +3,7 @@ import NewsCard from '../components/NewsCard';
 
 const MarketNews = () => {
 
-  const [newsItems, setNewsItems] = useState([]);
+  const [newsItems, setNewsItems] = useState(null);
 
   const getNews = async () => {
     
@@ -36,8 +36,8 @@ const MarketNews = () => {
 
   // time to render stuff
   
-  if(newsItems === []) {
-    return <p>Loading ...</p>
+  if(newsItems == null) {
+    return <p style={{color:'whitesmoke'}} >Loading ...</p>
   }
 
   return (

@@ -23,7 +23,7 @@ const MarketNews = () => {
         tempAuthor = news.feed[i].authors[0];
       }
       
-      let tempObj = { title: news.feed[i].title, image: news.feed[i].banner_image, url: news.feed[i].url, topic: news.feed[i].topics[0].topic, author: tempAuthor }
+      let tempObj = { title: news.feed[i].title, image: news.feed[i].banner_image, url: news.feed[i].url, topic: news.feed[i].topics[0].topic, author: tempAuthor, summary: news.feed[i].summary }
       tempArray.push(tempObj);
     }
     setNewsItems(tempArray);
@@ -45,7 +45,6 @@ const MarketNews = () => {
       {newsItems.map((item) => {
         return(
           <div>
-            {item.author}
             <NewsCard title={item.title} author={item.author} image={item.image} url={item.url} topic={item.topic} />
           </div>
         )

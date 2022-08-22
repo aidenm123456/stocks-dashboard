@@ -23,7 +23,7 @@ const MarketNews = () => {
         tempAuthor = news.feed[i].authors[0];
       }
       
-      let tempObj = { title: news.feed[i].title, image: news.feed[i].banner_image, url: news.feed[i].url, topic: news.feed[i].topics[0].topic, author: tempAuthor, summary: news.feed[i].summary }
+      let tempObj = { title: news.feed[i].title.slice(0,95), image: news.feed[i].banner_image, url: news.feed[i].url, topic: news.feed[i].topics[0].topic, author: tempAuthor, summary: news.feed[i].summary }
       tempArray.push(tempObj);
     }
     setNewsItems(tempArray);
@@ -41,17 +41,39 @@ const MarketNews = () => {
   }
 
   return (
-    <div>
-      {newsItems.map((item) => {
-        return(
-          <div>
-            <NewsCard title={item.title} author={item.author} image={item.image} url={item.url} topic={item.topic} />
-          </div>
-        )
-      })}
-      
+    <div style={flexDiv} >
+      <h1 style={h1Style} >Today's Trending Market News</h1>
+      <div style={gridDiv} >
+        {newsItems.map((item) => {
+          return(
+            <div>
+              <NewsCard title={item.title} author={item.author} image={item.image} url={item.url} topic={item.topic} />
+            </div>
+          )
+        })}
+        
+      </div>
     </div>
   )
+}
+
+const flexDiv = {
+  width: '85vw',
+  display: 'flex',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  marginLeft:'10vw'
+}
+
+const h1Style = {
+  color: 'whitesmoke'
+}
+
+const gridDiv = {
+  display: 'grid',
+  gridTemplateColumns: '60vw',
+  // gridTemplateRows: '275px',
+  rowGap: '15px'
 }
 // {newsItems[0].author}
 export default MarketNews

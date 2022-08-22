@@ -6,11 +6,18 @@ const NewsCard = ( {title, author, image, url, topic, summary} ) => {
     <a style={aStyle}href={url} target='_blank' rel="noreferrer">
 
       <div style={cardDiv}>
+
+        <div style={lDiv}>
+          <img src={image} alt="" style={miniImage} />
+        </div>
         
-        <h4 style={hFour} >{title}</h4>
-        <img src={image} alt="" style={miniImage} />
-        <p>{author}</p>
-        <p>{topic}</p>
+        <div style={rDiv}>
+          <h4 style={hFour} >{title}</h4>
+          <p>{author}</p>
+          <p>{topic}</p>
+        </div>
+        
+        
 
 
       </div>
@@ -24,15 +31,25 @@ const aStyle =  {
 };
 
 const cardDiv = {
-  backgroundColor: '#635FA3'
+  backgroundColor: '#635FA3',
+  display: 'flex'
 };
+
+const lDiv = {
+  width: '15vw',
+  display: 'flex',
+  justifyContent:'center',
+  alignItems: 'center'
+};
+
+const rDiv = {};
 
 const hFour = {
 };
 
 const miniImage = {
-  width: '12vw',
-  height: '12vh'
+  width: '15vw',
+  height: '15vh'
 };
 
 

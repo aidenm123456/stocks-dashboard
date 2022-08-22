@@ -117,11 +117,11 @@ const SearchTicker = () => {
     <div style={Root}>
       <div>
         <form onSubmit={submitTicker}>
-          <input type="text" value={tickerInput} onChange={(e) => setTickerInput(e.target.value)}/>
+          <input style= {TickerInput} type="text" value={tickerInput} onChange={(e) => setTickerInput(e.target.value)}/>
         </form>
-        <button onClick={() => getTicker('IBM', 'TIME_SERIES_DAILY')}>1D</button>
-        <button onClick={() => getTicker('IBM', 'TIME_SERIES_WEEKLY')}>1W</button>
-        <button onClick={() => getTicker('IBM', 'TIME_SERIES_MONTHLY')}>1M</button>
+        <button style={TimeButton} onClick={() => getTicker('IBM', 'TIME_SERIES_DAILY')}>1D</button>
+        <button style={TimeButton} onClick={() => getTicker('IBM', 'TIME_SERIES_WEEKLY')}>1W</button>
+        <button style={TimeButton} onClick={() => getTicker('IBM', 'TIME_SERIES_MONTHLY')}>1M</button>
         <Chart  chartData={timeSeries} highestPrice={highestPrice} lowestPrice={lowestPrice} />
       </div>
       <div style={OverviewContainer}>
@@ -144,6 +144,21 @@ const Root = {
   display: 'flex',
   marginTop: '4%',
   marginLeft: '3%'
+};
+
+const TickerInput = {
+  backgroundColor: '#635FA3',
+  color: 'whitesmoke',
+  border: 'none',
+  borderRadius: '2px'
+};
+
+const TimeButton = {
+  backgroundColor: '#635FA3',
+  color: 'whitesmoke',
+  border: 'none',
+  borderRadius: '2px',
+  marginRight:'0.3vw'
 };
 
 const OverviewContainer = {

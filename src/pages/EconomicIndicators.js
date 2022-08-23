@@ -1,16 +1,27 @@
 import React from 'react'
+import { useEffect } from 'react';
+import IndicatorButton from '../components/IndicatorButton'
 
 const EconomicIndicators = () => {
+
+  
+  
+
+
   return (
     <div style={{width: '84vw'}} >
       
       <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
-        <button>Real GDP</button>
-        <button>10-Year Treasury Yield</button>
-        <button>Federal Funds Rate</button>
-        <button>Consumer Price Index</button>
-        <button>Inflation Rate</button>
-        <button>Unemployment rate</button>
+        <IndicatorButton title={'Real GDP'}/>
+        <IndicatorButton title={'10-Year Treasury Yield'}/>
+        <IndicatorButton title={'Federal Funds Rate'}/>
+        <IndicatorButton title={'Consumer Price Index'}/>
+        <IndicatorButton title={'Inflation Rate'}/>
+        <IndicatorButton title={'Unemployment rate'}/>
+      </div>
+
+      <div>
+        
       </div>
 
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IndicatorButton = ({}) => {
+const IndicatorButton = ({ title }) => {
   return (
     <button>{title}</button>
   )

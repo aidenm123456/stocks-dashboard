@@ -56,12 +56,12 @@ const EconomicIndicators = () => {
     <div style={{width: '84vw'}} >
       
       <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
-        <IndicatorButton title={'Real GDP'}/>
-        <IndicatorButton title={'10-Year Treasury Yield'}/>
-        <IndicatorButton title={'Federal Funds Rate'}/>
-        <IndicatorButton title={'Consumer Price Index'}/>
-        <IndicatorButton title={'Inflation Rate'}/>
-        <IndicatorButton title={'Unemployment rate'}/>
+        <IndicatorButton title={'Real GDP'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=REAL_GDP&interval=annual&apikey=demo`)}/>
+        <IndicatorButton title={'10-Year Treasury Yield'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=TREASURY_YIELD&interval=monthly&maturity=10year&apikey=demo`)}/>
+        <IndicatorButton title={'Federal Funds Rate'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=FEDERAL_FUNDS_RATE&interval=monthly&apikey=demo`)}/>
+        <IndicatorButton title={'Consumer Price Index'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=CPI&interval=monthly&apikey=demo`)} />
+        <IndicatorButton title={'Inflation Rate'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=INFLATION&apikey=demo`)} />
+        <IndicatorButton title={'Unemployment rate'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey=demo`)} />
       </div>
       
       <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '1vh' }}>

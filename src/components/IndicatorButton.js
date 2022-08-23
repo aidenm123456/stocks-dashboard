@@ -1,8 +1,8 @@
 import React from 'react'
 
-const IndicatorButton = ({ title }) => {
+const IndicatorButton = ({ title, onCall }) => {
   return (
-    <button>{title}</button>
+    <button onClick={onCall}>{title}</button>
   )
 }
 

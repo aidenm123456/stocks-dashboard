@@ -1,8 +1,13 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Chart from '../components/Chart';
 import IndicatorButton from '../components/IndicatorButton'
 
 const EconomicIndicators = () => {
+
+  const [chartValues, setChartValues] = useState();
+  const [highestPrice, setHighestPrice] = useState();
+  const [lowestPrice, setLowestPrice] = useState();
 
   const getEcon = async ( apiUrl ) => {
     const data = await fetch(apiUrl); //CS2FWWWNNNJOW6BT
@@ -12,10 +17,23 @@ const EconomicIndicators = () => {
     // console.log(econ.name);
     // console.log(econ.unit);
     // console.log(econ.interval);
+    let tempArray = [];
+    let allPrices = [];
 
-    for(let i = 0; i < econ.data.length; i++) {
-      console.log(Object.values(econ.data[i]))
+    for(let i = econ.data.length - 1; i >= 0; i--) {
+      // console.log(Object.values(econ.data[i]));
+
+      allPrices.push(parseFloat(Object.values(econ.data[i])[1]));
+      let tempObj = { date: Object.values(econ.data[i])[0], value: Object.values(econ.data[i])[1] };
+      tempArray.push(tempObj);
     }
+    console.log(tempArray)
+    setChartValues(tempArray);
+    console.log(allPrices)
+
+    setHighestPrice(Math.max(...allPrices));
+    setLowestPrice(Math.min(...allPrices));
+    console.log(Math.max(...allPrices), Math.min(...allPrices))
 
     // let tempObj = { date: dates[i], value: prices[i] };
   } 
@@ -39,8 +57,8 @@ const EconomicIndicators = () => {
         <IndicatorButton title={'Unemployment rate'}/>
       </div>
 
-      <div>
-        
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '10vh' }}>
+        <Chart style={{paddingLeft: '50px'}}chartData={chartValues} highestPrice={highestPrice} lowestPrice={lowestPrice} />  {/* highestPrice={highestPrice} lowestPrice={lowestPrice} */}
       </div>
 
     </div>

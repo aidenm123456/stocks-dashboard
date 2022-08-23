@@ -9,6 +9,10 @@ const EconomicIndicators = () => {
   const [highestPrice, setHighestPrice] = useState();
   const [lowestPrice, setLowestPrice] = useState();
 
+  const [chartName, setChartName] = useState();
+  const [chartInterval, setChartInterval] = useState();
+  const [chartUnit, setChartUnit] = useState();
+
   const getEcon = async ( apiUrl ) => {
     const data = await fetch(apiUrl); //CS2FWWWNNNJOW6BT
     const econ = await data.json();
@@ -17,6 +21,9 @@ const EconomicIndicators = () => {
     // console.log(econ.name);
     // console.log(econ.unit);
     // console.log(econ.interval);
+    setChartName(econ.name);
+    setChartInterval(econ.interval);
+    setChartUnit(econ.unit);
     let tempArray = [];
     let allPrices = [];
 
@@ -56,8 +63,12 @@ const EconomicIndicators = () => {
         <IndicatorButton title={'Inflation Rate'}/>
         <IndicatorButton title={'Unemployment rate'}/>
       </div>
+      
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '1vh' }}>
+        <h3 style={{color:'whitesmoke'}}>{chartName}{' in ' + chartUnit}{' (' + chartInterval + ')'}</h3>
+      </div>
 
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '10vh' }}>
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '1vh' }}>
         <Chart style={{paddingLeft: '50px'}}chartData={chartValues} highestPrice={highestPrice} lowestPrice={lowestPrice} />  {/* highestPrice={highestPrice} lowestPrice={lowestPrice} */}
       </div>
 

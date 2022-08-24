@@ -5,7 +5,7 @@ import IndicatorButton from '../components/IndicatorButton'
 
 const EconomicIndicators = () => {
 
-  const [chartValues, setChartValues] = useState();
+  const [chartValues, setChartValues] = useState(null);
   const [highestPrice, setHighestPrice] = useState();
   const [lowestPrice, setLowestPrice] = useState();
 
@@ -50,7 +50,10 @@ const EconomicIndicators = () => {
     console.log('call use effect once')
   }, [])
   
-
+  
+  if(chartValues == null) {
+    return <p style={{color:'whitesmoke'}} >Loading ...</p>
+  }
 
   return (
     <div style={{width: '84vw'}} >

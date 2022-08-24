@@ -158,7 +158,7 @@ const TimeButton = {
   color: 'whitesmoke',
   border: 'none',
   borderRadius: '2px',
-  marginRight:'0.3vw'
+  marginRight:'0.3vw',
 };
 
 const OverviewContainer = {

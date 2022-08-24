@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import Chart from '../components/Chart';
-import IndicatorButton from '../components/IndicatorButton'
+import IndicatorButton from '../components/IndicatorButton';
+import styled from 'styled-components';
 
 const EconomicIndicators = () => {
 
@@ -56,27 +57,52 @@ const EconomicIndicators = () => {
   }
 
   return (
-    <div style={{width: '84vw'}} >
+    <DivMain>
       
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop:'1.5vh'}}>
+      <DivButton>
         <IndicatorButton title={'Real GDP'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=REAL_GDP&interval=annual&apikey=demo`)}/>
         <IndicatorButton title={'10-Year Treasury Yield'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=TREASURY_YIELD&interval=monthly&maturity=10year&apikey=demo`)}/>
         <IndicatorButton title={'Federal Funds Rate'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=FEDERAL_FUNDS_RATE&interval=monthly&apikey=demo`)}/>
         <IndicatorButton title={'Consumer Price Index'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=CPI&interval=monthly&apikey=demo`)} />
         <IndicatorButton title={'Inflation Rate'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=INFLATION&apikey=demo`)} />
         <IndicatorButton title={'Unemployment rate'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey=demo`)} />
-      </div>
+      </DivButton>
       
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '5vh' }}>
+      <DivHeading>
         <h3 style={{color:'whitesmoke'}}>{chartName}{' in ' + chartUnit}{' (' + chartInterval + ')'}</h3>
-      </div>
+      </DivHeading>
 
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '1vh' }}>
-        <Chart style={{paddingLeft: '50px'}}chartData={chartValues} highestPrice={highestPrice} lowestPrice={lowestPrice} />  {/* highestPrice={highestPrice} lowestPrice={lowestPrice} */}
-      </div>
+      <DivChart>
+        <Chart style={{paddingLeft: '50px'}} chartData={chartValues} highestPrice={highestPrice} lowestPrice={lowestPrice} />
+      </DivChart>
 
-    </div>
+    </DivMain>
   )
 }
+
+const DivMain = styled.div`
+  width: 84vw;
+`
+
+const DivButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin-top: 5vh; 
+`
+
+const DivHeading = styled.div`
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh; 
+`
+
+const DivChart = styled.div`
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 1vh; 
+`
 
 export default EconomicIndicators

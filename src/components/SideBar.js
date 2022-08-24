@@ -42,6 +42,10 @@ const SideBar = () => {
             </NavContainer>
           </NavLinks>
         </div>
+
+        <div style={{position: 'fixed', paddingLeft: '3.5vw', marginTop: '93vh'}}>
+          <p style={{color:'whitesmoke', fontSize:'0.95vw'}}>By: <a style={{textDecoration:'none', fontSize:'0.95vw', color: 'whitesmoke'}}href="https://github.com/aidenm123456/stocks-dashboard" target='_blank' rel="noreferrer">aidenm123456</a></p>
+        </div>
       </SecondaryContainer>
 
     </SideBarDiv>

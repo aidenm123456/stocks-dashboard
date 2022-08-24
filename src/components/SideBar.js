@@ -13,7 +13,9 @@ const SideBar = () => {
       <SecondaryContainer>
 
         <div style={{paddingLeft: '2.5vw'}}>
-          <h1 style={{color:'whitesmoke', fontSize: '2vw',fontFamily: 'Pacifico, cursive'}}>EquitiesData</h1>
+          <a style={{textDecoration:'none'}} href="/">
+            <h1 style={{color:'whitesmoke', fontSize: '2vw',fontFamily: 'Pacifico, cursive'}}>EquitiesData</h1>
+          </a>
         </div>
 
         <div style={{paddingLeft: '2.5vw', paddingTop:'10vh'}} >

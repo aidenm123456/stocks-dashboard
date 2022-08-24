@@ -55,7 +55,7 @@ const EconomicIndicators = () => {
   return (
     <div style={{width: '84vw'}} >
       
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop:'1.5vh'}}>
         <IndicatorButton title={'Real GDP'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=REAL_GDP&interval=annual&apikey=demo`)}/>
         <IndicatorButton title={'10-Year Treasury Yield'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=TREASURY_YIELD&interval=monthly&maturity=10year&apikey=demo`)}/>
         <IndicatorButton title={'Federal Funds Rate'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=FEDERAL_FUNDS_RATE&interval=monthly&apikey=demo`)}/>
@@ -64,7 +64,7 @@ const EconomicIndicators = () => {
         <IndicatorButton title={'Unemployment rate'} onCall={() => getEcon(`https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey=demo`)} />
       </div>
       
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '1vh' }}>
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', marginTop: '5vh' }}>
         <h3 style={{color:'whitesmoke'}}>{chartName}{' in ' + chartUnit}{' (' + chartInterval + ')'}</h3>
       </div>
 

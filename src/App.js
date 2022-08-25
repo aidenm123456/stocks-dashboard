@@ -13,9 +13,9 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <SearchTicker /> }/>
-          <Route path="/marketnews" element={ <MarketNews /> }/>
-          <Route path="/economicindicators" element={ <EconomicIndicators /> }/>
+          <Route path="/stocks-dashboard/" element={ <SearchTicker /> }/>
+          <Route path="/stocks-dashboard/marketnews" element={ <MarketNews /> }/>
+          <Route path="/stocks-dashboard/economicindicators" element={ <EconomicIndicators /> }/>
         </Routes>
       </BrowserRouter>
     </div>

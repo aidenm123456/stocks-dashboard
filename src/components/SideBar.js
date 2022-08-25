@@ -19,7 +19,7 @@ const SideBar = () => {
         </div>
 
         <div style={{paddingLeft: '2.5vw', paddingTop:'10vh'}} >
-          <NavLinks href="/">
+          <NavLinks href="/stocks-dashboard/">
             <NavContainer>
               <FaSearch size='1.05vw' />
               <p>Search Ticker</p>
@@ -28,7 +28,7 @@ const SideBar = () => {
         </div>
 
         <div style={{paddingLeft: '2.5vw'}}>
-          <NavLinks href="/marketnews">
+          <NavLinks href="/stocks-dashboard/marketnews">
             <NavContainer>
               <BiNews size='1.05vw' />
               <p>Trending News</p>
@@ -37,7 +37,7 @@ const SideBar = () => {
         </div>
 
         <div style={{paddingLeft: '2.5vw'}}>
-          <NavLinks href="/economicindicators">
+          <NavLinks href="/stocks-dashboard/economicindicators">
             <NavContainer>
               <BsBank2 size='1.05vw' />
               <p>Economic Indicators</p>

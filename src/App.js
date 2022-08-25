@@ -1,7 +1,7 @@
 import SearchTicker from './pages/SearchTicker';
 import MarketNews from './pages/MarketNews';
 import EconomicIndicators from './pages/EconomicIndicators';
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SideBar from './components/SideBar';
 
 
@@ -11,13 +11,13 @@ function App() {
 
       <SideBar />
 
-      {/* <HashRouter> */}
+      <BrowserRouter>
         <Routes>
-          <Route path="/stocks-dashboard/" element={ <SearchTicker /> }/>
-          <Route path="/stocks-dashboard/marketnews" element={ <MarketNews /> }/>
-          <Route path="/stocks-dashboard/economicindicators" element={ <EconomicIndicators /> }/>
+          <Route path="/" element={ <SearchTicker /> }/>
+          <Route path="/marketnews" element={ <MarketNews /> }/>
+          <Route path="/economicindicators" element={ <EconomicIndicators /> }/>
         </Routes>
-      {/* </HashRouter> */}
+      </BrowserRouter>
     </div>
   );
 }

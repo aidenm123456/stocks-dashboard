@@ -11,13 +11,13 @@ function App() {
 
       <SideBar />
 
-      <HashRouter>
+      {/* <HashRouter> */}
         <Routes>
           <Route path="/stocks-dashboard/" element={ <SearchTicker /> }/>
           <Route path="/stocks-dashboard/marketnews" element={ <MarketNews /> }/>
           <Route path="/stocks-dashboard/economicindicators" element={ <EconomicIndicators /> }/>
         </Routes>
-      </HashRouter>
+      {/* </HashRouter> */}
     </div>
   );
 }

@@ -13,9 +13,9 @@ function App() {
 
       <HashRouter>
         <Routes>
-          <Route path="/stocks-dashboard/" element={ <SearchTicker /> }/>
-          <Route path="/stocks-dashboard/marketnews" element={ <MarketNews /> }/>
-          <Route path="/stocks-dashboard/economicindicators" element={ <EconomicIndicators /> }/>
+          <Route path="/" element={ <SearchTicker /> }/>
+          <Route path="/marketnews" element={ <MarketNews /> }/>
+          <Route path="/economicindicators" element={ <EconomicIndicators /> }/>
         </Routes>
       </HashRouter>
     </div>
